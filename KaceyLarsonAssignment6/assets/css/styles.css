@@ -1,0 +1,365 @@
+@import "./normalize.css";
+
+/* General CSS */
+:root{
+    --primary-color: #72915A;
+    --secondary-color: #E7D8C4;
+    --body-color: #4C4848;
+    --white-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    color: var(--body-color);
+    font-family: "Roboto Slab", Arial, Helvetica, serif;
+    font-size: 1.728rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1,h2{
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 2.488rem;
+}
+
+h2{
+    font-size: 2.074rem;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+      font-size: 1.953rem;
+    }
+  
+    h1 {
+      font-size: 3.052rem;
+    }
+}
+
+/* Navbar */
+#header{
+    background: var(--primary-color);
+}
+
+.brand-area{
+    text-align: center;
+    width: 100%;
+}
+
+.brand-area .brand-link{
+    color: var(--white-color);
+}
+
+.nav{
+    padding: 1rem;
+}
+
+.list{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-list{
+    width: 100%;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 0.5rem 2rem;
+}
+  
+.nav-item:last-of-type {
+    border-bottom: none;
+}
+
+.nav-item .nav-link{
+    color: var(--white-color);
+    text-transform: capitalize;
+}
+
+.collapsible-content{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:all 0.3s
+}
+
+.collapsible-expanded .collapsible-content {
+    max-height:100%;
+    opacity:1
+}
+
+.nav-toggler{
+    color: var(--white-color);
+    display: block;
+    text-align: center;
+}
+
+.nav.collapsible-expanded .nav-toggler {
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+    .icon-hidden {
+      display: none;
+    }
+
+    .list{
+        justify-content: space-between;
+    }
+
+    .nav-list{
+        width: auto;
+        display: flex;
+        max-height: 100%;
+        opacity: 1;
+    }
+  }
+
+/* Featured-Section CSS */
+.block{
+    padding: 5rem 2rem;
+}
+
+.featured-block .featured-imgs img{
+    max-width: 500px;
+    height: auto;
+    width: 100%;
+}
+
+.featured-block .title-one{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.featured-block .title-two{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.featured-block .feature-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.featured-block .feature-list li{
+    margin-bottom: 0.5rem;
+}
+
+.featured-block .feature-list li:last-child{
+    margin-bottom: 0;
+}
+
+.grid{
+    display: grid;
+}
+
+@media screen and (min-width: 768px){
+    .grid-cols-2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-cols-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-season{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .block .grid{
+        gap: 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .grid-season{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* SeasonPlants-Section CSS */
+.seasonplants-block .seasonplants-title{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.seasonplants-block .season-block:last-child{
+    border-bottom: none;
+}
+
+.seasonplants-block .season-block .season-title{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.seasonplants-block .season-block .season-details{
+    margin-bottom: 1rem;
+}
+
+.seasonplants-block .season-block .season-details .caption{
+    text-transform: capitalize;
+}
+
+.seasonplants-block .season-block .season-details .season-pic{
+    max-width: 300px;
+    height: auto;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .seasonplants-block .season-block{
+        border-bottom: 1px solid var(--secondary-color);
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .seasonplants-block .season-block{
+        border-right: 1px solid var(--secondary-color);
+        border-bottom: none;
+        padding: 0 1rem;
+    }
+
+    .seasonplants-block .season-block:last-child{
+        border-right: none
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .seasonplants-block .season-block:nth-child(even){
+        border-right: none;
+    }
+}
+
+/* Rare-Section CSS */
+.rare-block .rare-block-content .content-block{
+    padding: 2rem 0;
+}
+
+.rare-block .title-one{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content-block .content-block-title{
+    text-transform: capitalize;
+}
+
+.rare-block .rare-block-imgs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rare-block .rare-block-imgs img{
+    max-width: 170px;
+    height: auto;
+    width: 100%;
+}
+
+@media screen and (max-width:767px) {
+    .rare-block .rare-block-imgs{
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .rare-block .rare-block-imgs img{
+        max-width: 250px;
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:1100px){
+    .rare-block .rare-block-imgs img{
+        max-width: 250px;
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+/* Footer CSS */
+.footer-block{
+    background: var(--secondary-color);
+    color: #2d2d2d;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .footer-link{
+    color: #2d2d2d;
+}
+
+.footer .social-links{
+    display: block;
+}
+
+.footer-list{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.footer-link, .social-links, .footer-list{
+    margin: 1rem 0;
+}
+
+.footer-list .footer-list-item{
+    padding: 0.5rem 0;
+}
+
+.footer-list .footer-list-item a{
+    color: #2d2d2d;
+}
+
+@media screen and (min-width: 768px){
+    .footer{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-list .footer-list-item{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .footer-list .footer-list-item:last-child{
+        margin-right: 0;
+    }
+}
